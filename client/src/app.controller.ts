@@ -10,6 +10,6 @@ export class AppController {
   accumulate(): Observable<number> {
     const pattern = { cmd: 'sum' };
     const payload = [1, 2, 3];
-    return this.client.send<number>(pattern, payload);
+    return this.client.send<number>(pattern, { data: payload });
   }
 }
