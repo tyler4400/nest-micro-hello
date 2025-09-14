@@ -3,7 +3,7 @@ import { ClientProxy } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 
 @Controller()
-export class AppController {
+export class ClientController {
   constructor(@Inject('MATH_SERVICE') private client: ClientProxy) {}
 
   @Get()
