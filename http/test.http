@@ -4,3 +4,9 @@ GET {{host}}:{{port}}/test/message
 
 ### 基于事件的通信
 GET {{host}}:{{port}}/test/event
+
+### 期望超时
+GET {{host}}:{{port}}/test/timeout
+
+### catch错误
+GET {{host}}:{{port}}/test/catch

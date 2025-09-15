@@ -16,6 +16,15 @@ export class AppController {
     return (data || []).reduce((a, b) => a + b);
   }
 
+  @MessagePattern({ cmd: 'timeout' })
+  timeout(@Payload('data') data: number[]): Promise<unknown> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve((data || []).reduce((a, b) => a + b));
+      }, 2000);
+    });
+  }
+
   @EventPattern('user_created')
   handleUserCreated(data: Record<string, unknown>) {
     console.log('基于事件的通信', data);
