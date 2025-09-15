@@ -1,0 +1,6 @@
+
+### 基于消息的通信
+GET {{host}}:{{port}}/test/message
+
+### 基于事件的通信
+GET {{host}}:{{port}}/test/event
