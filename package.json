@@ -1,5 +1,5 @@
 {
-  "name": "nest-app1",
+  "name": "nest-micro-hello",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -8,10 +8,10 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/apps/nest-app1/main",
+    "start:main": "nest start",
+    "start:main:dev": "nest start --watch",
+    "start:mian:debug": "nest start --debug --watch",
+    "start:main:prod": "node dist/apps/main/main",
     "start:client:dev": "nest start client --watch",
     "start:client:debug": "nest start client --debug --watch",
     "start:client:prod": "node dist/apps/client/main",
@@ -20,7 +20,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./apps/nest-app1/test/jest-e2e.json"
+    "test:e2e": "jest --config ./apps/main/test/jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
