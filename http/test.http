@@ -11,5 +11,8 @@ GET {{host}}:{{port}}/test/timeout
 ### catch错误
 GET {{host}}:{{port}}/test/catch
 
-### 过滤器
+### 过滤器 期待错误
 GET {{host}}:{{port}}/test/filter
+
+### 熔断器
+GET {{host}}:{{port}}/test/breaker

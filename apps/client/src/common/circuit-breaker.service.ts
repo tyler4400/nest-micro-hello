@@ -114,7 +114,7 @@ export class CircuitBreakerService {
   private transitionToOpen() {
     this.state = CircuitBreakerState.Open;
     console.log('Circuit is Open');
-    this.nextAttempt = Date.now() + this.options.resetTimeout;
+    this.nextAttempt = Date.now() + this.options.resetTimeout!;
   }
   // 设置到半开
   private transitionToHalfOpen() {
@@ -138,7 +138,7 @@ export class CircuitBreakerService {
     this.successCount++;
     if (
       this.isHalfOpen() &&
-      this.calculateFailureRate() < this.options.errorThresholdPercentage
+      this.calculateFailureRate() < this.options.errorThresholdPercentage!
     ) {
       this.transitionToClosed();
     }
@@ -149,7 +149,7 @@ export class CircuitBreakerService {
     // 失败率 > 阈值
     if (
       this.isClosed() &&
-      this.calculateFailureRate() >= this.options.errorThresholdPercentage
+      this.calculateFailureRate() >= this.options.errorThresholdPercentage!
     ) {
       // 设置为断开状态
       this.transitionToOpen();

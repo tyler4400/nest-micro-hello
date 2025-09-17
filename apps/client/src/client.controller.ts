@@ -3,7 +3,7 @@ import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { catchError, Observable, of, timeout } from 'rxjs';
 import { RpcFilter } from './filter/rpc.filter';
 
-@Controller('test')
+@Controller()
 export class ClientController {
   constructor(@Inject('MATH_SERVICE') private client: ClientProxy) {}
 

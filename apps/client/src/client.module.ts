@@ -2,9 +2,17 @@ import { Module } from '@nestjs/common';
 import { ClientController } from './client.controller';
 import { ClientService } from './client.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { RouterModule } from '@nestjs/core';
+import { BreakerController } from './breaker.controller';
 
 @Module({
   imports: [
+    RouterModule.register([
+      {
+        path: 'test',
+        module: ClientModule,
+      },
+    ]),
     ClientsModule.register([
       {
         name: 'MATH_SERVICE',
@@ -15,7 +23,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       },
     ]),
   ],
-  controllers: [ClientController],
+  controllers: [ClientController, BreakerController],
   providers: [ClientService],
 })
 export class ClientModule {}

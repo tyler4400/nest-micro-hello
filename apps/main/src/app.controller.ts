@@ -20,7 +20,7 @@ export class AppController {
   timeout(@Payload('data') data: number[]): Promise<unknown> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve((data || []).reduce((a, b) => a + b));
+        resolve((data || []).reduce((a, b) => a + b, 0));
       }, 2000);
     });
   }
